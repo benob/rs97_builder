@@ -8,6 +8,6 @@ pool:
 
 steps:
 - script: |
-    sudo apt-get install -y bc wget build-essential bazaar cvs git mercurial rsync scp subversion 
+    sudo apt-get install -y bc wget build-essential bzr cvs git mercurial rsync subversion 
     ./build.sh
   displayName: run builder
