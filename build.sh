@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -u -e -o pipefail
+
 git submodule init
 git submodule update
 
