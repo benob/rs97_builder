@@ -1,9 +1,15 @@
 git submodule init
 git submodule update
 
-cd buildroot
+pushd toolchain/buildroot
 
 make defconfig make defconfig BR2_DEFCONFIG=../buildroot.config.rs97
 make
 
-cd ..
+popd
+
+source env.sh
+pushd ports/sdl_test
+make
+file sdl_test
+popd
