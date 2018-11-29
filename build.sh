@@ -9,7 +9,7 @@ ROOT=$PWD
 
 pushd toolchain/buildroot
 
-make defconfig make defconfig BR2_DEFCONFIG=$ROOT/buildroot.config.rs97
+make defconfig BR2_DEFCONFIG=$ROOT/buildroot.config.rs97
 make
 
 popd
