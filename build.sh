@@ -14,8 +14,9 @@ make
 
 popd
 
-pushd ports/sdl_test
 source $ROOT/env.sh
+
+pushd ports/sdl_test
 make
 file sdl_test
 popd
