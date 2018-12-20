@@ -9,5 +9,11 @@ pool:
 steps:
 - script: |
     sudo apt-get install -y bc wget build-essential bzr cvs git mercurial rsync subversion 
-    ./build.sh
+    echo coucou #./build.sh
   displayName: run builder
+- task: ArchiveFiles@2
+  inputs:
+    archiveType: 'tar'
+    tarCompression: 'gz'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).tar.gz'
+- task: PublishBuildArtifacts@1
