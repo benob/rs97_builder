@@ -8,13 +8,13 @@ pool:
 
 steps:
 - script: sudo apt-get install -y bc wget build-essential bzr cvs git mercurial rsync subversion
-  displayName: install ubuntu dependencies
-- script: echo $PWD # ./build.sh
-  displayName: run builder
+  displayName: Install dependencies
+- script: ./build.sh
+  displayName: Run builder
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: '$(System.DefaultWorkingDirectory)/ports'
+    rootFolderOrFile: '$(System.DefaultWorkingDirectory)/toolchain'
     archiveType: 'tar'
     tarCompression: 'gz'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).tar.gz'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/rs97_toolchain-$(Build.BuildId).tar.gz'
 - task: PublishBuildArtifacts@1
