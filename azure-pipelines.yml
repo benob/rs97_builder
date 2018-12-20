@@ -9,11 +9,11 @@ pool:
 steps:
 - script: sudo apt-get install -y bc wget build-essential bzr cvs git mercurial rsync subversion
   displayName: install ubuntu dependencies
-- script: echo coucou # ./build.sh
+- script: echo $PWD # ./build.sh
   displayName: run builder
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: '$(Agent.BuildDirectory)/ports'
+    rootFolderOrFile: '$(System.DefaultWorkingDirectory)/ports'
     archiveType: 'tar'
     tarCompression: 'gz'
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).tar.gz'
