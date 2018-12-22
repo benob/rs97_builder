@@ -15,6 +15,6 @@ steps:
   inputs:
     rootFolderOrFile: '$(System.DefaultWorkingDirectory)/toolchain'
     archiveType: 'tar'
-    tarCompression: 'gz'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/rs97_toolchain-$(Build.BuildId).tar.gz'
+    tarCompression: 'none'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/rs97_toolchain-$(Build.BuildId).tar'
 - task: PublishBuildArtifacts@1
